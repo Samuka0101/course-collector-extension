@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Coletor de Informações do Curso",
+  "version": "3.1.0",
+  "description": "Abre e renderiza páginas da plataforma para coletar cursos, aulas, ferramentas e metadados de vídeos.",
+  "permissions": ["activeTab", "scripting", "storage", "downloads", "tabs", "unlimitedStorage"],
+  "host_permissions": ["https://app.plataformaassaad.com.br/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Coletar informações do curso",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://app.plataformaassaad.com.br/*"],
+      "js": ["collector.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

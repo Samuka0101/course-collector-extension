@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Mapa do Curso</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <header>
+      <span class="eyebrow">COLETOR DE INFORMAÇÕES</span>
+      <h1>Informações do Curso</h1>
+      <p>Abre e renderiza páginas, aulas e players para coletar informações. Não cria planos.</p>
+    </header>
+
+    <section class="privacy">
+      <strong>Privacidade primeiro</strong>
+      <span>Só conteúdo visível. Senhas, cookies e campos digitados nunca são coletados.</span>
+    </section>
+
+    <label for="scope">Área a coletar</label>
+    <select id="scope">
+      <option value="all">Tudo, com prioridade pedagógica</option>
+      <option value="courses">Cursos, ciclos, módulos e aulas</option>
+      <option value="questions">Banco de questões e listas</option>
+      <option value="simulations">Simulados</option>
+      <option value="materials">Materiais</option>
+      <option value="tools">Ferramentas e mentorias</option>
+      <option value="current">Somente a área atualmente aberta</option>
+    </select>
+
+    <label for="limit">Quantidade máxima de páginas</label>
+    <select id="limit">
+      <option value="60">60 páginas</option>
+      <option value="150">150 páginas</option>
+      <option value="300">300 páginas</option>
+      <option value="500" selected>500 páginas</option>
+    </select>
+
+    <button id="scan" class="primary">Coletar informações do curso</button>
+    <button id="stop" hidden>Parar coleta</button>
+    <div id="status" role="status">Abra o painel principal do curso.</div>
+
+    <section id="result" hidden>
+      <div class="stats">
+        <div><b id="items">0</b><span>páginas</span></div>
+        <div><b id="videos">0</b><span>conceitos</span></div>
+        <div><b id="minutes">0</b><span>vídeos</span></div>
+      </div>
+      <button id="export">Exportar informações (.json)</button>
+      <button id="clear" class="danger">Limpar dados salvos</button>
+    </section>
+
+    <footer>A coleta continua em segundo plano. A análise só será feita depois do seu aval.</footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
